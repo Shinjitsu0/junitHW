@@ -1,10 +1,11 @@
 import java.util.*;
 
 public class Students {
+    Set<Student> studentSet = new HashSet<>();
 
-    public Set<Student> addStudent(Student student, Set<Student> studentSet) {
+    public Set<Student> addStudent(Student student) {
         if(studentSet.contains(student)){
-            System.out.print("Такой студент существует");
+            System.out.print("Такой студент существует\n");
         } else {
             studentSet.add(student);
             for(Student students: studentSet){
@@ -14,7 +15,7 @@ public class Students {
         return studentSet;
     }
 
-    public void printStudentSet(Set<Student> studentSet) {
+    public void printStudentSet() {
         for (Student student : studentSet) {
             System.out.println(student);
         }

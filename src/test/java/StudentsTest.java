@@ -19,31 +19,29 @@ class StudentsTest {
     void addStudent() {
         // given:
         Students students = new Students();
-        Set<Student> soursStudentSet = new HashSet<>();
-        Set<Student> finiteStudentSet = new HashSet<>();
+        Set<Student> testStudentSet = new HashSet<>();
         Student st1 = new Student("Vladimir", "B412", "001");
-        soursStudentSet.add(st1);
+        testStudentSet.add(st1);
 
         // when:
-        students.addStudent(st1, finiteStudentSet);
+        students.addStudent(st1);
 
         // then:
-        Assertions.assertEquals(soursStudentSet, finiteStudentSet);
+        Assertions.assertEquals(testStudentSet, students.studentSet);
     }
 
     @Test
     void addEqualStudent() {
         // given:
         Students students = new Students();
-        Set<Student> soursStudentSet = new HashSet<>();
         Student st1 = new Student("Vladimir", "B412", "001");
-        soursStudentSet.add(st1);
+        students.studentSet.add(st1);
 
         // when:
-        students.addStudent(st1, soursStudentSet);
+        students.addStudent(st1);
 
         // then:
-        Assertions.assertEquals("Такой студент существует", output.toString());
+        Assertions.assertEquals("Такой студент существует\n", output.toString());
     }
 
     @AfterAll

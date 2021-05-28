@@ -1,10 +1,8 @@
-import java.util.HashSet;
+
 import java.util.Scanner;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Student> studentSet = new HashSet<>();
         Students students = new Students();
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -17,11 +15,11 @@ public class Main {
 
             String[] array = student.split(", ");
             try {
-                students.addStudent(new Student(array[0], array[1], array[2]), studentSet);
+                students.addStudent(new Student(array[0], array[1], array[2]));
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Ошибка ввода");
             }
         }
-        students.printStudentSet(studentSet);
+        students.printStudentSet();
     }
 }
